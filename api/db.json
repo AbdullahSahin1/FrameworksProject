@@ -1,5 +1,5 @@
 {
-    "frameworks":[
+    "courses":[
         {
             "id":1,
             "content": "ReactJS, geliştiriciler tarafından web uygulamaları için kullanıcı arayüzleri oluşturmak amacıyla kullanılan güçlü bir JavaScript kütüphanesidir. İlk olarak 2011 yılında Facebook tarafından web sitelerinin performansını artırmak için oluşturuldu ve o zamandan beri dünya çapındaki geliştiriciler tarafından yaygın bir şekilde benimsendi. React JS'nin en önemli avantajlarından biri, tüm sayfayı yeniden yüklemeye gerek kalmadan kullanıcı arayüzünü verimli bir şekilde güncellemesine olanak tanıyan sanal DOM'udur. Ayrıca React JS, karmaşık kod tabanlarını basitleştirmeye ve geliştirmeyi daha hızlı ve verimli hale getirmeye yardımcı olabilecek yeniden kullanılabilir bileşenler oluşturmayı kolaylaştırır.",
