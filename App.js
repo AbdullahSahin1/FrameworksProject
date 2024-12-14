@@ -1,7 +1,58 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StatusBar } from "expo-status-bar";
+import { useState } from "react";
+import {
+  StyleSheet,
+  Text,
+  View,
+  Button,
+  FlatList,
+  Image,
+  TouchableOpacity,
+} from "react-native";
+import CourseInput from "./Components/CourseInput";
 
 export default function App() {
+  const [modalIsVisible, setModalIsVisible] = useState(false);
+  const [program, setProgram] = useState([]);
+
+  const startModal = () => {
+    setModalIsVisible(true);
+  };
+
+  const endModal = () => {
+    setModalIsVisible(false);
+  };
+
+  const addProgram = (courseTitle) => {
+    setProgram((currentProgram) => [
+      ...currentProgram,
+      { tech: courseTitle, id: Math.random().toString() },
+    ]);
+    endModal();
+  };
+
+
+  const getImageSource = (tech) => {
+    switch (tech.toLowerCase()) {
+      case "dart":
+        return require("./assets/Images/dart.png");
+      case "flutter":
+        return require("./assets/Images/flutter.png");
+      case "xamarin":
+        return require("./assets/Images/xamarin.png");
+      case "go":
+        return require("./assets/Images/go.png");
+      case "react native":
+        return require("./assets/Images/native.png");
+      case "ruby":
+        return require("./assets/Images/ruby.png");
+      case "swift":
+        return require("./assets/Images/swift.png");
+      case "kotlin":
+        return require("./assets/Images/kotlin.png");
+    }
+  };
+
   return (
     <>
       <StatusBar style="auto" />
