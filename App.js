@@ -3,10 +3,36 @@ import { StyleSheet, Text, View } from 'react-native';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Ornek Yazi</Text>
+    <>
       <StatusBar style="auto" />
-    </View>
+      <View style={styles.container}>
+        <Button
+          title="Programlama Ekle"
+          color={"#4CAF50"}
+          onPress={startModal}
+        />
+        <CourseInput
+          visible={modalIsVisible}
+          onAddProgram={addProgram}
+          onCancel={endModal}
+        />
+        <View style={styles.listContainer}>
+          <FlatList
+            data={program}
+            renderItem={({ item }) => (
+              <View style={styles.listItem}>
+                <Image
+                  source={getImageSource(item.tech)}
+                  style={styles.listImage}
+                />
+                <Text style={styles.listText}>{item.tech}</Text>
+              </View>
+            )}
+            keyExtractor={(item) => item.id}
+          />
+        </View>
+      </View>
+    </>
   );
 }
 
